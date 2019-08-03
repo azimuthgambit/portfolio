@@ -24,24 +24,58 @@
   <div class="filler"></div>
 </div>
 
+
+
 <div class="about-section">
 
-  <div class="grid-container about-rows" id="about1">
-      <div class="about-img">
-        <img src="./images/david_wedding_square.JPG" id="img1">
-      </div>
-      <div class="about-text">
-        <h5>Hi, I'm David.  I live in Philadelphia. I build things.</h5>
-      </div>
+  <div class="grid-container about-rows about-left" id="about1">
+    <div class="about-img">
+      <img src="./images/david_linkedin_square1.png" id="img1">
+    </div>
+    <div class="about-text">
+      <h5>Hi, I'm David.  I live in Philadelphia.  I build things.  My background is in Mechanical Engineering and I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. <br>
+      Nowadays, there is a whole lot more being built with code, so that's where I prefer to be.  I am pivoting over to this domain and my focus (at least to start) is Front End Development.  I find many similarities and transferrable skills from my previous work building industrial machinery and research equipment. <br>
+      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese.
+      </h5>
+    </div>
+  </div>
+
+
+  <div class="grid-container about-rows about-left" id="about3">
+    <div class="grid-container about-icons">
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js-square"></i>
+      <i class="fab fa-git-square"></i>
+
+    </div>
+    <div class="about-text">
+      <h5>Nowadays, I'm building things with code.</h5>
+      <h5>My chief skills include html, CSS, and JavaScript, and git.</h5>
+    </div>
   </div>
 
 </div>
 
+<div class="portfolio-section">
+
+
+    <div class="grid-container about-rows about-right" id="about2">
+      <div class="about-text">
+        <h5>For example, I designed this 3D bioprinter.</h5>
+      </div>
+      <div class="about-img">
+        <img src="./images/A3_Angle.png" id="img2">
+      </div>
+    </div>
 
 
 
-<div class="grid-container icons">
-  <div class="filler"></div>
+</div>
+
+
+<div class="grid-container contact-icons">
+  <div class="filler"><h5>drop me a line:</h5></div>
     <div class="grid-container contact">
       <a href="mailto:azimuth.gambit@gmail.com" class="fas fa-envelope-square"></a>
       <a href="https://github.com/azimuthgambit" class="fab fa-github-square"></a>
@@ -69,8 +103,14 @@ function scrollFunction() {
     bodyId.style.transition = "background-color 1000ms";
     bodyId.style.backgroundColor = "hsl(214, 40%, 10%)";
   }
-  if (scrolled >= 20) {
+  if (scrolled >= 15) {
     document.getElementById("about1").style.opacity = '1';
+  }
+  if (scrolled >= 45) {
+    document.getElementById("about2").style.opacity = '1';
+  }
+  if (scrolled >= 65) {
+    document.getElementById("about3").style.opacity = '1';
   }
 }
 

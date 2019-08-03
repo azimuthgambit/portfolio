@@ -25,6 +25,7 @@ body {
 
 /* define breakpoint variables: */
 /* :root {  --breakpoint-small: 600px;  --breakpoint-medium: 800px;  --breakpoint-large: 1000px; } */
+/* :root {  --redbackground: red; } */
 
 
 /* Typography
@@ -33,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 100;
+  /* color: var(--redbackground); */
 }
 h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
 h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
@@ -46,8 +48,8 @@ h6 { font-size: 1.2rem; line-height: 1.6;  letter-spacing: 0; }
 /* --breakpoint-small */
 /* @media screen and ( min-width: var(--breakpoint-small)) { */
 /* @media screen and ( min-width: 600px { */
-/* @media screen and ( min-width:var(--breakpoint-small)) { */
   /* @media screen and ( min-width:var(breakpoint-small)) { */
+  /* @media screen and ( min-width:var(--breakpoint-small)) { */
   @media(min-width:600px) {
   h1 { font-size: 5.0rem; }
   h2 { font-size: 4.2rem; }
@@ -75,7 +77,7 @@ p {  margin-top: 0; }
 
 #welcome-columns {
   grid-template-columns: [first] auto [line2] minmax(40rem, 50rem) [line3] auto [last];
-  height:55vh;
+  height:65vh;
   width:100%;
   /* height:100%; */
   /* background-image: linear-gradient( 	hsl(214, 50%, 15%), hsl(214, 50%, 4%) ); */
@@ -98,7 +100,7 @@ p {  margin-top: 0; }
 }
 
 /* dashed lines around grid divs for reference */
-/* .grid-container, .grid-container > div, .grid-container > a { border: 0.5px dashed snow; border-radius: 5px; } */
+.grid-container, .grid-container > div, .grid-container > a { border: 0.5px dashed snow; border-radius: 5px; }
 
 #welcome-rows > div {
   /* background-color: rgba(6, 9, 9, .9) ; */
@@ -112,7 +114,15 @@ p {  margin-top: 0; }
   align-self:start;
 }
 
-.about-section { height:50vh; }
+/* .about-section { height:50vh; } */
+
+.about-rows {
+  height:40vh;
+  opacity:0;
+  transition: opacity 1s ease 200ms;
+  grid-gap:2rem;
+}
+/* @media(min-width:600px) {  .about-rows {grid-gap:5rem;} } */
 
 .about-rows img {
   border-radius:50%;
@@ -120,18 +130,40 @@ p {  margin-top: 0; }
   height:auto;
 }
 
-.about-rows {
-  opacity:0;
-  transition: opacity 1s ease 500ms;
-  grid-template-columns: 3fr 4fr;
-  grid-gap:5rem;
-}
-
-.about-img  { justify-self:end; }
 .about-text { align-self:center; }
 
+.about-left  { grid-template-columns: 3fr 4fr; }
+.about-left .about-text { justify-self:start;}
+.about-left .about-img { place-self: center end; }
 
-.icons {
+.about-right { grid-template-columns: 4fr 3fr; }
+.about-right .about-text { justify-self: end; }
+.about-right .about-img { place-self: center start; }
+
+
+.about-icons {
+  width: 30rem;
+  height: 30rem;
+  grid: 1fr 1fr / 1fr 1fr ;
+  place-items: center center;
+  place-self: center end;
+}
+
+.about-icons > i {
+  font-size: 8rem;
+  color:snow;
+  opacity:0.8;
+}
+
+.filler > h5 {
+  text-align:center;
+  /* padding-top:3rem;
+  height:6rem; */
+  padding:2rem 0;
+  margin:0;
+}
+
+.contact-icons {
   grid-template-columns: autofill minmax(250px, 800px) autofill;
   justify-content:center;
   background-size: cover;
@@ -139,7 +171,7 @@ p {  margin-top: 0; }
 }
 
 .contact {
-  margin: 8rem 0;
+  margin-bottom: 8rem;
   width:minmax(25rem, 80rem);
   grid-auto-flow: column;
   grid-auto-columns:minmax(4rem, 10rem);
@@ -152,7 +184,7 @@ p {  margin-top: 0; }
 .contact > a {
   font-size: 5rem;
   color:snow;
-  opacity:0.5;
+  opacity:0.7;
 }
 
 .footer {
