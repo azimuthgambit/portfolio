@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="my portfolio website">
+  <meta name="author" content="Azimuth Gambit アジマス・ガンビット">
+  <meta name="viewport" content="width=device-width, initial scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- <script src="https://kit.fontawesome.com/615fb86ecb.js"></script> -->
+</head>
+<body id="bodyId">
+
+<!-- <div class="header">  <div class="topnav">  </div> </div> -->
+
+<div class="grid-container welcome" id="welcome-columns">
+  <div class="filler"></div>
+    <div class="grid-container column" id="welcome-rows">
+      <div class="welcome-a"> Azimuth Gambit <br> <h6> アズミス・ガンビト </h6> </div>
+      <div class="welcome-b">Front-End Developer ・ Mechanical Engineer ・ Musician</div>
+    </div>
+  <div class="filler"></div>
+</div>
+
+<div class="about-section">
+
+  <div class="grid-container about-rows" id="about1">
+      <div class="about-img">
+        <img src="./images/david_wedding_square.JPG" id="img1">
+      </div>
+      <div class="about-text">
+        <h5>Hi, I'm David.  I live in Philadelphia. I build things.</h5>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="grid-container icons">
+  <div class="filler"></div>
+    <div class="grid-container contact">
+      <a href="mailto:azimuth.gambit@gmail.com" class="fas fa-envelope-square"></a>
+      <a href="https://github.com/azimuthgambit" class="fab fa-github-square"></a>
+      <a href="https://twitter.com/AzimuthGambit" class="fab fa-twitter-square"></a>
+      <a href="https://www.linkedin.com/in/david-noble-p-e-a782b127/" class="fab fa-linkedin"></a>
+      <a href="https://soundcloud.com/azimuthgambit" class="fab fa-soundcloud" id="soundcloud"></a>
+    </div>
+  <div class="filler"></div>
+</div>
+
+
+<div class="footer">© Azimuth Gambit 2019 </div>
+
+<script>
+const bodyId = document.getElementById('bodyId');
+bodyId.onload = () => bodyId.style.opacity = '1';
+
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  console.log(scrolled);
+  if (scrolled >= 2) {
+    bodyId.style.transition = "background-color 1000ms";
+    bodyId.style.backgroundColor = "hsl(214, 40%, 10%)";
+  }
+  if (scrolled >= 20) {
+    document.getElementById("about1").style.opacity = '1';
+  }
+}
+
+
+</script>
+
+</body>
+
+</html>
