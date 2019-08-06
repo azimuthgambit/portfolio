@@ -1,32 +1,27 @@
+@charset "UTF-8";
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
 html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
-  font-size: 62.5%; }
-body {
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.6;
-  font-weight: 400;
-  /* font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
-  /* color: #222;  */
-  margin:0;
-  font-family: 'Yantramanav', sans-serif;
-  box-sizing: border-box;
-  color:snow;
-  /* background-color:#121212; */
-  background-color:#121212;
-  opacity:0;
-  transition: opacity 1000ms ease 400ms;
-  /* transition: background-color 500ms ease; */
-
+  font-size: 62.5%;
 }
 
-/* define breakpoint variables: */
-/* :root {  --breakpoint-small: 600px;  --breakpoint-medium: 800px;  --breakpoint-large: 1000px; } */
-/* :root {  --redbackground: red; } */
-
+body {
+  min-width: 300px;
+  font-size: 1.5em;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+  font-family: "Yantramanav", sans-serif;
+  box-sizing: border-box;
+  color: snow;
+  background-color: #121212;
+  opacity: 0;
+  transition: opacity 1000ms ease 400ms;
+}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -34,58 +29,100 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 100;
-  /* color: var(--redbackground); */
-}
-h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
-h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
-h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
-h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
-h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
-h6 { font-size: 1.2rem; line-height: 1.6;  letter-spacing: 0; }
-.welcome-a { font-size:4.5rem; }
-.welcome-b { font-size:1.8rem; }
-
-/* --breakpoint-small */
-/* @media screen and ( min-width: var(--breakpoint-small)) { */
-/* @media screen and ( min-width: 600px { */
-  /* @media screen and ( min-width:var(breakpoint-small)) { */
-  /* @media screen and ( min-width:var(--breakpoint-small)) { */
-  @media(min-width:600px) {
-  h1 { font-size: 5.0rem; }
-  h2 { font-size: 4.2rem; }
-  h3 { font-size: 3.6rem; }
-  h4 { font-size: 3.0rem; }
-  h5 { font-size: 2.4rem; }
-  h6 { font-size: 1.5rem; }
-  .welcome-a { font-size: 6rem; }
-  .welcome-b { font-size: 2rem; }
 }
 
-p {  margin-top: 0; }
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 1.3;
+  letter-spacing: -0.1rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -0.08rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.welcome-a {
+  font-size: 4rem;
+}
+
+.welcome-b {
+  font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 4.2rem;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+  }
+
+  h4 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+  }
+
+  h6 {
+    font-size: 2rem;
+  }
+
+  .welcome-a {
+    font-size: 6rem;
+  }
+
+  .welcome-b {
+    font-size: 2rem;
+  }
+}
+p {
+  margin-top: 0;
+}
 
 /* Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
 .grid-container {
   display: grid;
   border-radius: 4px;
 }
 
-/* #welcome { background: {linear-gradient( rgba(0, 0, 5, 0.45), rgba(0, 0, 250, 0.45);} } */
-/* #welcome { } */
-
 #welcome-columns {
-  grid-template-columns: [first] auto [line2] minmax(40rem, 50rem) [line3] auto [last];
-  height:65vh;
-  width:100%;
-  /* height:100%; */
-  /* background-image: linear-gradient( 	hsl(214, 50%, 15%), hsl(214, 50%, 4%) ); */
-  /* opacity:0;
-  transition: opacity 1000ms ease 400ms;
-  transition: 1s;
-  background-image: #121212;
-  transition: background-image 1s; */
+  grid-template-columns: [first] auto [line2] minmax(300px, 50rem) [line3] auto [last];
+  height: 65vh;
+  width: 100%;
 }
 
 #welcome-rows {
@@ -93,101 +130,150 @@ p {  margin-top: 0; }
   grid-column-end: line3;
   grid-template-rows: 45vh 5vh;
   justify-content: center;
-  text-align:center;
-  font-weight:100;
-  width:100%
-  /* min-width:41.5rem; */
+  text-align: center;
+  font-weight: 100;
+  width: 100%;
 }
 
 /* dashed lines around grid divs for reference */
-.grid-container, .grid-container > div, .grid-container > a { border: 0.5px dashed snow; border-radius: 5px; }
+.grid-container, .grid-container > div, .grid-container > a {
+  border: 0.5px dashed snow;
+  border-radius: 5px;
+}
 
 #welcome-rows > div {
   /* background-color: rgba(6, 9, 9, .9) ; */
   /* opacity:.5 */
 }
 
-.welcome-a {  align-self:end; }
+.welcome-a {
+  align-self: end;
+}
 
 .welcome-b {
-  padding: .75rem 2rem;
-  align-self:start;
+  padding: 0.75rem 2rem;
+  align-self: start;
 }
 
 /* .about-section { height:50vh; } */
-
 .about-rows {
-  height:40vh;
-  opacity:0;
+  height: auto;
+  min-height: 15rem;
+  opacity: 0;
   transition: opacity 1s ease 200ms;
-  grid-gap:2rem;
+  grid-gap: 2rem;
 }
-/* @media(min-width:600px) {  .about-rows {grid-gap:5rem;} } */
-
+@media only screen and (min-width: 600px) {
+  .about-rows {
+    grid-gap: 5rem;
+  }
+}
 .about-rows img {
-  border-radius:50%;
-  width:30rem;
-  height:auto;
+  border-radius: 50%;
+  width: 20vw;
+  min-width: 15rem;
+  height: auto;
 }
 
-.about-text { align-self:center; }
+.about-text {
+  align-self: center;
+}
 
-.about-left  { grid-template-columns: 3fr 4fr; }
-.about-left .about-text { justify-self:start;}
-.about-left .about-img { place-self: center end; }
+.about-middle {
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.about-middle .about-img {
+  place-self: center center;
+}
 
-.about-right { grid-template-columns: 4fr 3fr; }
-.about-right .about-text { justify-self: end; }
-.about-right .about-img { place-self: center start; }
-
-
-.about-icons {
-  width: 30rem;
-  height: 30rem;
-  grid: 1fr 1fr / 1fr 1fr ;
-  place-items: center center;
+.about-left {
+  grid-template-columns: 3fr 4fr;
+}
+.about-left .about-text {
+  justify-self: start;
+}
+.about-left .about-img {
   place-self: center end;
 }
 
-.about-icons > i {
-  font-size: 8rem;
-  color:snow;
-  opacity:0.8;
+.about-right {
+  grid-template-columns: 4fr 3fr;
+}
+.about-right .about-text {
+  justify-self: end;
+}
+.about-right .about-img {
+  place-self: center start;
 }
 
-.filler > h5 {
-  text-align:center;
-  /* padding-top:3rem;
-  height:6rem; */
-  padding:2rem 0;
-  margin:0;
+.about-icons {
+  width: 15rem;
+  height: 15rem;
+  grid: 1fr 1fr/1fr 1fr;
+  place-items: center center;
+  place-self: center end;
+}
+@media only screen and (min-width: 600px) {
+  .about-icons {
+    width: 300px;
+    height: 30rem;
+  }
+}
+.about-icons i {
+  font-size: 4rem;
+  color: snow;
+  opacity: 0.8;
+}
+@media only screen and (min-width: 600px) {
+  .about-icons i {
+    font-size: 8rem;
+  }
 }
 
-.contact-icons {
-  grid-template-columns: autofill minmax(250px, 800px) autofill;
-  justify-content:center;
-  background-size: cover;
-  background-image:url('https://2um6b944etm332zlf4pb7a19-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/Fine-Art-Tom-Blachford-HAL9001.jpg');
+.filler h5, .filler h6 {
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
 }
 
 .contact {
-  margin-bottom: 8rem;
-  width:minmax(25rem, 80rem);
-  grid-auto-flow: column;
-  grid-auto-columns:minmax(4rem, 10rem);
-  grid-column-gap:2rem;
+  width: 100%;
   justify-content: center;
-  text-align:center;
-  overflow-x:auto;
+  background-size: cover;
+  background-image: url("https://2um6b944etm332zlf4pb7a19-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/Fine-Art-Tom-Blachford-HAL9001.jpg");
 }
 
-.contact > a {
-  font-size: 5rem;
-  color:snow;
-  opacity:0.7;
+.contact-icons {
+  margin-bottom: 8rem;
+  width: 240px;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(4rem, 10rem);
+  grid-column-gap: 1rem;
+  justify-content: center;
+  text-align: center;
+  overflow-x: auto;
+}
+@media only screen and (min-width: 600px) {
+  .contact-icons {
+    width: 55rem;
+    grid-column-gap: 2rem;
+  }
+}
+.contact-icons a {
+  font-size: 2rem;
+  color: snow;
+  opacity: 0.7;
+}
+@media only screen and (min-width: 600px) {
+  .contact-icons a {
+    font-size: 5rem;
+  }
 }
 
 .footer {
-  text-align:center;
+  text-align: center;
   margin: 6rem 0 3rem 0;
 }
+
+/*# sourceMappingURL=style.css.map */
