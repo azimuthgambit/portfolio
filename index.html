@@ -15,9 +15,9 @@
 
 <!-- <div class="header">  <div class="topnav">  </div> </div> -->
 
-<div class="grid-container welcome" id="welcome-columns">
+<div class="container welcome hidden" id="welcome">
   <div class="filler"></div>
-    <div class="grid-container column" id="welcome-rows">
+    <div class="container column" id="welcome-rows">
       <div class="welcome-a"> Azimuth Gambit <br> <h6> アズミス・ガンビト </h6> </div>
       <div class="welcome-b">Front-End Developer ・ Mechanical Engineer ・ Consultant</div>
     </div>
@@ -28,41 +28,40 @@
 
 <div class="about-section">
 
-  <div class="grid-container about-rows about-middle" id="about1">
+  <div class="container about-row hidden" id="about1">
     <div class="about-img">
       <img src="./images/david_linkedin_square1.png" id="img1">
     </div>
+
     <div class="about-text">
       <h5>Hi, I'm David Noble.  </h5>
         <!-- I live in Philadelphia.  I build things.  My background is in Mechanical Engineering and I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. <br>
       Nowadays, there is a whole lot more being built with code, so that's where I prefer to be.  I am pivoting over to this domain and my focus (at least to start) is Front End Development.  I find many similarities and transferrable skills from my previous work building industrial machinery and research equipment. <br>
-      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. -->
-      </h5>
+      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5> -->
     </div>
   </div>
 
 
-  <div class="grid-container about-rows about-middle" id="about2">
-    <div class="about-img">
-      <img src="./images/david_linkedin_square1.png" id="img1">
-    </div>
+  <div class="container about-row hidden" id="about2">
     <div class="about-text">
-      <h5>Hi, I'm David Noble.  </h5>
+      <h5>I design and build things, such as this amazing 3D Bioprinter.  </h5>
         <!-- I live in Philadelphia.  I build things.  My background is in Mechanical Engineering and I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. <br>
       Nowadays, there is a whole lot more being built with code, so that's where I prefer to be.  I am pivoting over to this domain and my focus (at least to start) is Front End Development.  I find many similarities and transferrable skills from my previous work building industrial machinery and research equipment. <br>
-      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. -->
-      </h5>
+      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5> -->
+    </div>
+
+    <div class="about-img">
+      <img src="./images/A3_Angle.png" id="img1">
     </div>
   </div>
 
 
-  <div class="grid-container about-rows about-left" id="about3">
-    <div class="grid-container about-icons">
+  <div class="container about-row hidden" id="about3">
+    <div class="container about-icons">
       <i class="fab fa-html5"></i>
       <i class="fab fa-css3-alt"></i>
       <i class="fab fa-js-square"></i>
       <i class="fab fa-git-square"></i>
-
     </div>
     <div class="about-text">
       <h5>Nowadays, I'm building things with code.</h5>
@@ -77,21 +76,21 @@
 <div class="portfolio-section">
 
 
-    <div class="grid-container about-rows about-right" id="about4">
-      <div class="about-text">
-        <h5>For example, I designed this 3D bioprinter.</h5>
-      </div>
-      <div class="about-img">
-        <img src="./images/A3_Angle.png" id="img2">
-      </div>
+  <div class="container about-row hidden" id="about4">
+    <div class="about-text">
+      <h5>For example, I designed this 3D bioprinter.</h5>
     </div>
+    <div class="about-img">
+      <img src="./images/A3_Angle.png" id="img2">
+    </div>
+  </div>
 
 </div>
 
 
-<div class="grid-container contact">
+<div class="container contact hidden">
   <div class="filler"><h5>drop me a line:</h5></div>
-    <div class="grid-container contact-icons">
+    <div class="container contact-icons">
       <a href="mailto:azimuth.gambit@gmail.com" class="fas fa-envelope-square"></a>
       <a href="https://github.com/azimuthgambit" class="fab fa-github-square"></a>
       <a href="https://twitter.com/AzimuthGambit" class="fab fa-twitter-square"></a>
@@ -102,35 +101,73 @@
 </div>
 
 
-<div class="footer">© Azimuth Gambit 2019 </div>
+<div class="footer hidden">© Azimuth Gambit 2019 </div>
 
 <script>
+// const hiddenDivs = document.querySelectorAll('.hidden');
 
-const bodyId = document.getElementById('bodyId');
-bodyId.onload = () => bodyId.style.opacity = '1';
+const bodyId  = document.getElementById('bodyId');
+const welcome = document.getElementById('welcome');
+bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-element' ); }
 
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  console.log(Math.floor(scrolled));
-  if (scrolled >= 2) {
-    bodyId.style.transition = "background-color 1000ms";
-    bodyId.style.backgroundColor = "hsl(214, 40%, 10%)";
+// let windowHeight = window.innerHeight;
+// console.log(windowHeight);
+
+var animateHTML = function() {
+  var elems;
+  var windowHeight;
+  function init() {
+    elems = document.querySelectorAll('.hidden');
+    windowHeight = window.innerHeight;
+    addEventHandlers();
+    checkPosition();
   }
-  if (scrolled >= 15) {
-    document.getElementById("about1").style.opacity = '1';
+  function addEventHandlers() {
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', init);
   }
-  if (scrolled >= 45) {
-    document.getElementById("about2").style.opacity = '1';
+  function checkPosition() {
+    for (var i = 0; i < elems.length; i++) {
+      var positionFromTop = elems[i].getBoundingClientRect().top;
+      // if (positionFromTop - windowHeight <= 0) {
+      // console.log('positionFromTop = ' + positionFromTop + ' , ' + 'windowHeight = ' + windowHeight);
+      console.log(positionFromTop / windowHeight);
+      if (positionFromTop / windowHeight <= 0.55) {
+        elems[i].className = elems[i].className.replace(
+          'hidden',
+          'fade-in-element'
+        );
+      }
+    }
   }
-  if (scrolled >= 65) {
-    document.getElementById("about3").style.opacity = '1';
-  }
-}
+  return {
+    init: init
+  };
+};
+animateHTML().init();
 
 
+// window.onscroll = function() {scrollFunction()};
+// function scrollFunction() {
+//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//   var scrolled = (winScroll / height) * 1000;
+//   // console.log(Math.floor(scrolled));
+//   if (scrolled >= 20) { bodyId.classList.add('fade-in-body'); }
+//   // if (scrolled >= 15) {
+//   if (scrolled >= aboutOne.offsetTop/3) {
+//     // document.getElementById("about1").style.opacity = '1';
+//     aboutOne.classList.replace( 'hidden', 'fade-in-element' );
+//   }
+//   if (scrolled >= aboutTwo.offsetTop/3) {
+//     // document.getElementById("about2").style.opacity = '1';
+//     aboutTwo.classList.replace( 'hidden', 'fade-in-element' );
+//   }
+//   if (scrolled >= aboutThree.offsetTop/3) {
+//     // document.getElementById("about3").style.opacity = '1';
+//     aboutThree.classList.replace( 'hidden', 'fade-in-element' );
+//   }
+// }
 </script>
 
 </body>

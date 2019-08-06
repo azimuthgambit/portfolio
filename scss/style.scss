@@ -6,6 +6,21 @@ $phone : 600px;
 $tablet: 768px;
 $desktop: 1024px;
 
+.hidden { opacity:0; }
+
+@keyframes fade-in {
+    from { opacity: 0; transform: scale(.85,.85); filter: blur(2px);}
+    to   { opacity: 1;}
+  }
+.fade-in-element { animation: fade-in 0.8s ease-out forwards; }
+
+
+@keyframes fade-in-background {
+    from { background-color:#121212; }
+    to   { background-color: hsl(214, 40%, 10%); }
+}
+.fade-in-body { animation: fade-in-background 1.2s forwards; }
+
 
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -25,8 +40,8 @@ body {
   box-sizing: border-box;
   color:snow;
   background-color:#121212;
-  opacity:0;
-  transition: opacity 1000ms ease 400ms;
+  // opacity:0;
+  // transition: opacity 1000ms ease 400ms;
   // transition: background-color 500ms ease;
 }
 
@@ -61,14 +76,14 @@ p {  margin-top: 0; }
 
 /* Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.grid-container {
+.container {
   display: grid;
   border-radius: 4px;
 }
 
-#welcome-columns {
+.welcome {
   grid-template-columns: [first] auto [line2] minmax($body-min-width, 50rem) [line3] auto [last];
-  height:65vh;
+  height:55vh;
   width:100%;
 }
 
@@ -83,12 +98,8 @@ p {  margin-top: 0; }
 }
 
 /* dashed lines around grid divs for reference */
-.grid-container, .grid-container > div, .grid-container > a { border: 0.5px dashed snow; border-radius: 5px; }
+.container, .container > div, .container > a { border: 0.5px dashed snow; border-radius: 5px; }
 
-#welcome-rows > div {
-  /* background-color: rgba(6, 9, 9, .9) ; */
-  /* opacity:.5 */
-}
 
 .welcome-a {  align-self:end; }
 
@@ -97,68 +108,43 @@ p {  margin-top: 0; }
   align-self:start;
 }
 
-/* .about-section { height:50vh; } */
 $about-img-width: 20vw;
-$about-min-width: 15rem;
+$about-min-width: 10rem;
 
-.about-rows {
-  // height:20vh;
-  // height: $about-img-width;
+.about-row {
+  margin: 3vh 0;
   height: auto;
-  min-height: $about-min-width;
-  opacity:0;
-  transition: opacity 1s ease 200ms;
-  grid-gap:2rem;
-  @media only screen and (min-width:$phone) {
-    grid-gap: 5rem;
-    // height:40vh;
-  }
+  grid: auto / 1fr 1fr;
+  grid-gap: 2vw;
+  > div:nth-child(1) { place-self: center end; }
+  > div:nth-child(2) { place-self: center start; }
+  // @media only screen and (min-width:$phone) { grid-gap: 5rem; height:40vh; }
   img {
     border-radius:50%;
-    // width:10rem;
     width:$about-img-width;
     min-width: $about-min-width;
     height:auto;
-    // @media only screen and (min-width:$phone) { width: 20vw; min-width:20rem; }
-    // @media only screen and (min-width:$phone) { width: 30rem; }
   }
-
 }
-
-.about-text { align-self:center; }
-
-.about-middle {
-  grid-template-columns: 1fr 1fr ;
-  justify-content:center;
-  .about-img { place-self: center center; }
-  // .about-text { justify-self:start; }
-}
-
-.about-left  {
-  grid-template-columns: 3fr 4fr;
-  .about-text { justify-self:start; }
-  .about-img { place-self: center end; }
-}
-
-.about-right {
-  grid-template-columns: 4fr 3fr;
-  .about-text { justify-self: end; }
-  .about-img { place-self: center start; }
-}
-
 
 .about-icons {
-  width: 15rem;
-  height: 15rem;
-  @media only screen and (min-width:$phone) { width:$body-min-width; height:30rem; }
+  // width: 15rem;
+  // height: 15rem;
+  width: $about-img-width;
+  height: $about-img-width;
+  min-width: $about-min-width;
+  min-height: $about-min-width;
+  // @media only screen and (min-width:$phone) { width:$body-min-width; height:30rem; }
   grid: 1fr 1fr / 1fr 1fr ;
   place-items: center center;
   place-self: center end;
   i {
-    font-size: 4rem;
+    // font-size: 4rem;
+    // font-size: 8vw;
+    font-size: calc(4rem + 2vw);
     color:snow;
     opacity:0.8;
-    @media only screen and (min-width:$phone) { font-size: 8rem; }
+    // @media only screen and (min-width:$phone) { font-size: 4vw; }
   }
 }
 
