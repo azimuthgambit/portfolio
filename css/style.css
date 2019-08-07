@@ -149,7 +149,7 @@ p {
 
 .welcome {
   grid-template-columns: [first] auto [line2] minmax(300px, 50rem) [line3] auto [last];
-  height: 55vh;
+  height: 65vh;
   width: 100%;
 }
 
@@ -164,11 +164,6 @@ p {
 }
 
 /* dashed lines around grid divs for reference */
-.container, .container > div, .container > a {
-  border: 0.5px dashed snow;
-  border-radius: 5px;
-}
-
 .welcome-a {
   align-self: end;
 }
@@ -181,27 +176,33 @@ p {
 .about-row {
   margin: 3vh 0;
   height: auto;
-  grid: auto/1fr 1fr;
+  grid: auto/auto auto;
   grid-gap: 2vw;
 }
 .about-row > div:nth-child(1) {
   place-self: center end;
+  text-align: right;
 }
 .about-row > div:nth-child(2) {
   place-self: center start;
+  text-align: left;
 }
 .about-row img {
-  border-radius: 50%;
-  width: 20vw;
-  min-width: 10rem;
+  border-radius: 2vw;
+  width: 40vw;
+  min-width: 15rem;
   height: auto;
 }
 
+#img1 {
+  width: 60vw;
+}
+
 .about-icons {
-  width: 20vw;
-  height: 20vw;
-  min-width: 10rem;
-  min-height: 10rem;
+  width: 40vw;
+  height: auto;
+  min-width: 15rem;
+  min-height: 15rem;
   grid: 1fr 1fr/1fr 1fr;
   place-items: center center;
   place-self: center end;
@@ -253,6 +254,7 @@ p {
 }
 
 .footer {
+  height: 20vh;
   text-align: center;
   margin: 6rem 0 3rem 0;
 }

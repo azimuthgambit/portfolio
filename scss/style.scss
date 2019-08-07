@@ -83,7 +83,7 @@ p {  margin-top: 0; }
 
 .welcome {
   grid-template-columns: [first] auto [line2] minmax($body-min-width, 50rem) [line3] auto [last];
-  height:55vh;
+  height:65vh;
   width:100%;
 }
 
@@ -98,7 +98,7 @@ p {  margin-top: 0; }
 }
 
 /* dashed lines around grid divs for reference */
-.container, .container > div, .container > a { border: 0.5px dashed snow; border-radius: 5px; }
+// .container, .container > div, .container > a { border: 0.5px dashed snow; border-radius: 5px; }
 
 
 .welcome-a {  align-self:end; }
@@ -108,30 +108,35 @@ p {  margin-top: 0; }
   align-self:start;
 }
 
-$about-img-width: 20vw;
-$about-min-width: 10rem;
+$about-img-width: 40vw;
+$about-min-width: 15rem;
 
 .about-row {
   margin: 3vh 0;
   height: auto;
-  grid: auto / 1fr 1fr;
+  // grid: auto / 1fr 1fr;
+  grid: auto / auto auto;
   grid-gap: 2vw;
-  > div:nth-child(1) { place-self: center end; }
-  > div:nth-child(2) { place-self: center start; }
+  > div:nth-child(1) { place-self: center end; text-align:right; }
+  > div:nth-child(2) { place-self: center start; text-align:left; }
   // @media only screen and (min-width:$phone) { grid-gap: 5rem; height:40vh; }
   img {
-    border-radius:50%;
+    // border-radius:50%;
+    border-radius:2vw;
     width:$about-img-width;
     min-width: $about-min-width;
     height:auto;
   }
 }
+#img1 {width: 60vw;}
+
+// #img-bioprinter {border-radius:5%;}
 
 .about-icons {
   // width: 15rem;
   // height: 15rem;
   width: $about-img-width;
-  height: $about-img-width;
+  height: auto;
   min-width: $about-min-width;
   min-height: $about-min-width;
   // @media only screen and (min-width:$phone) { width:$body-min-width; height:30rem; }
@@ -189,6 +194,7 @@ $about-min-width: 10rem;
 
 
 .footer {
+  height:20vh;
   text-align:center;
   margin: 6rem 0 3rem 0;
 }

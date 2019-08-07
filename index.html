@@ -30,7 +30,7 @@
 
   <div class="container about-row hidden" id="about1">
     <div class="about-img">
-      <img src="./images/david_linkedin_square1.png" id="img1">
+      <img src="./images/david_linkedin_0.png" id="img1">
     </div>
 
     <div class="about-text">
@@ -44,14 +44,14 @@
 
   <div class="container about-row hidden" id="about2">
     <div class="about-text">
-      <h5>I design and build things, such as this amazing 3D Bioprinter.  </h5>
+      <h5>I design and build things such as this 3D Bioprinter.  </h5>
         <!-- I live in Philadelphia.  I build things.  My background is in Mechanical Engineering and I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. <br>
       Nowadays, there is a whole lot more being built with code, so that's where I prefer to be.  I am pivoting over to this domain and my focus (at least to start) is Front End Development.  I find many similarities and transferrable skills from my previous work building industrial machinery and research equipment. <br>
       In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5> -->
     </div>
 
     <div class="about-img">
-      <img src="./images/A3_Angle.png" id="img1">
+      <img src="./images/A3_square.png" id="img-bioprinter">
     </div>
   </div>
 
@@ -81,15 +81,15 @@
       <h5>For example, I designed this 3D bioprinter.</h5>
     </div>
     <div class="about-img">
-      <img src="./images/A3_Angle.png" id="img2">
+      <img src="./images/A3_square.png" id="img3">
     </div>
   </div>
 
 </div>
 
 
-<div class="container contact hidden">
-  <div class="filler"><h5>drop me a line:</h5></div>
+<div class="container contact ">
+  <div class="filler"><h5>so drop me a line:</h5></div>
     <div class="container contact-icons">
       <a href="mailto:azimuth.gambit@gmail.com" class="fas fa-envelope-square"></a>
       <a href="https://github.com/azimuthgambit" class="fab fa-github-square"></a>
@@ -101,23 +101,19 @@
 </div>
 
 
-<div class="footer hidden">© Azimuth Gambit 2019 </div>
+<div class="footer ">© Azimuth Gambit 2019 </div>
 
 <script>
-// const hiddenDivs = document.querySelectorAll('.hidden');
 
 const bodyId  = document.getElementById('bodyId');
 const welcome = document.getElementById('welcome');
 bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-element' ); }
 
-// let windowHeight = window.innerHeight;
-// console.log(windowHeight);
+const elems = document.querySelectorAll('.hidden');
 
-var animateHTML = function() {
-  var elems;
+const animateHTML = function() {
   var windowHeight;
   function init() {
-    elems = document.querySelectorAll('.hidden');
     windowHeight = window.innerHeight;
     addEventHandlers();
     checkPosition();
@@ -129,14 +125,16 @@ var animateHTML = function() {
   function checkPosition() {
     for (var i = 0; i < elems.length; i++) {
       var positionFromTop = elems[i].getBoundingClientRect().top;
-      // if (positionFromTop - windowHeight <= 0) {
-      // console.log('positionFromTop = ' + positionFromTop + ' , ' + 'windowHeight = ' + windowHeight);
-      console.log(positionFromTop / windowHeight);
-      if (positionFromTop / windowHeight <= 0.55) {
-        elems[i].className = elems[i].className.replace(
-          'hidden',
-          'fade-in-element'
-        );
+      console.log((positionFromTop / windowHeight).toFixed(2));
+      if (positionFromTop / windowHeight <= 0.65) {
+        elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
+      if (!elems[1].classList.value.includes('hidden')) {
+        bodyId.classList.add('fade-in-body');
+      }
+      // if (!elems[elems.length-4].classList.value.includes('hidden')) {
+      //   elems[elems.length-2].classList.replace('hidden', 'fade-in-element');
+      //   elems[elems.length-1].classList.replace('hidden', 'fade-in-element');
+      // }
       }
     }
   }
