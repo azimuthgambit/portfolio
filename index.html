@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <title>Azimuth Gambit</title>
   <meta name="description" content="my portfolio website">
   <meta name="author" content="Azimuth Gambit アジマス・ガンビット">
   <meta name="viewport" content="width=device-width, initial scale=1">
@@ -13,83 +14,170 @@
 </head>
 <body id="bodyId">
 
-<!-- <div class="header">  <div class="topnav">  </div> </div> -->
-
 <div class="container welcome hidden" id="welcome">
   <div class="filler"></div>
     <div class="container column" id="welcome-rows">
       <div class="welcome-a"> Azimuth Gambit <br> <h6> アズミス・ガンビト </h6> </div>
-      <div class="welcome-b">Front-End Developer ・ Mechanical Engineer ・ Consultant</div>
+      <div class="welcome-b">Mechanical Engineer ・ Front-End Developer ・ Consultant</div>
     </div>
   <div class="filler"></div>
 </div>
 
 
+<div class="container about-row hidden" id="about1">
+  <div class="about-img">
+    <img src="./images/david1.jpg" class="portrait" id="img1">
+  </div>
 
-<div class="about-section">
+  <div class="about-text">
+    <h5>Hi, I'm David Noble.  </h5>
+    <h5>I live in Philadelphia, PA.  My background is in Mechanical Engineering, Machine Design, and Robotics.  I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. </h5>
+    <h5>In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5>
+  </div>
+</div>
 
-  <div class="container about-row hidden" id="about1">
-    <div class="about-img">
-      <img src="./images/david_linkedin_0.png" id="img1">
+
+<hr class="hidden">
+<div class="container about-row hidden" id="about2">
+  <div class="about-text">
+    <div class="title">
+      <h3>Allevi-3 Bioprinter</h3>
     </div>
-
-    <div class="about-text">
-      <h5>Hi, I'm David Noble.  </h5>
-        <!-- I live in Philadelphia.  I build things.  My background is in Mechanical Engineering and I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. <br>
-      Nowadays, there is a whole lot more being built with code, so that's where I prefer to be.  I am pivoting over to this domain and my focus (at least to start) is Front End Development.  I find many similarities and transferrable skills from my previous work building industrial machinery and research equipment. <br>
-      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5> -->
+    <div class="description">
+      <h5>I've designed and built many robots and machines, most recently this very cool 3D Bioprinter for Allevi, Inc. </h5>
     </div>
   </div>
 
+  <div class="about-img">
+    <a href="https://allevi3d.com/allevi-3" target="_blank">
+      <img src="./images/A3_square.png"
+      alt="Allevi-3 Bioprinter"
+      title="Allevi-3 Bioprinter"
+      class="portfolio-img"
+      id="img-bioprinter">
+    </a>
+  </div>
+</div>
 
-  <div class="container about-row hidden" id="about2">
-    <div class="about-text">
-      <h5>I design and build things such as this 3D Bioprinter.  </h5>
-        <!-- I live in Philadelphia.  I build things.  My background is in Mechanical Engineering and I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. <br>
-      Nowadays, there is a whole lot more being built with code, so that's where I prefer to be.  I am pivoting over to this domain and my focus (at least to start) is Front End Development.  I find many similarities and transferrable skills from my previous work building industrial machinery and research equipment. <br>
-      In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5> -->
+
+<hr class="hidden">
+<div class="container about-row hidden" id="about3">
+  <div class="container about-icons">
+    <i class="fab fa-html5"></i>
+    <i class="fab fa-css3-alt"></i>
+    <i class="fab fa-js-square"></i>
+    <i class="fab fa-git-square"></i>
+  </div>
+  <div class="about-text">
+    <h5>I also build things with code.  Since there's so much more being built with bits than atoms nowadays, I've tought myself Front End Development.</h5>
+    <h5>I'm a huge fan of dark themes.</h5>
+  </div>
+</div>
+
+
+
+<hr class="hidden">
+<div class="container about-row portfolio hidden" id="portfolio1">
+  <div class="about-text">
+    <div class="title">
+      <h3>Bookshelf</h3>
     </div>
 
-    <div class="about-img">
-      <img src="./images/A3_square.png" id="img-bioprinter">
+    <div class="description">
+      <h5>App for tracking your book collection. Built for the Odin Project curriculum to demonstrate object creators and other JavaScript methods.</h5>
+    </div>
+
+    <div class="container demo-repo-click">
+      <a href="https://azimuthgambit.github.io/bookshelf/" target="_blank">demo</a>
+      <a href="https://github.com/azimuthgambit/bookshelf" target="_blank">repo</a>
     </div>
   </div>
 
-
-  <div class="container about-row hidden" id="about3">
-    <div class="container about-icons">
-      <i class="fab fa-html5"></i>
-      <i class="fab fa-css3-alt"></i>
-      <i class="fab fa-js-square"></i>
-      <i class="fab fa-git-square"></i>
-    </div>
-    <div class="about-text">
-      <h5>Nowadays, I'm building things with code.</h5>
-      <!-- <h5>My chief skills include html, CSS, and JavaScript, and git.</h5> -->
-      <!-- <h6>Nowadays, I'm building things with code.</h6> -->
-      <!-- <h6>I'm focusing most on html, CSS, and JavaScript, and git.</h6> -->
-    </div>
+  <div class="about-img">
+    <img src=
+    "./images/bookshelf.jpg"
+    alt="Bookshelf app screenshot"
+    title="Bookshelf app"
+    class="portfolio-img"
+    id="bookshelf-img">
   </div>
 
 </div>
 
-<div class="portfolio-section">
 
-
-  <div class="container about-row hidden" id="about4">
-    <div class="about-text">
-      <h5>For example, I designed this 3D bioprinter.</h5>
+<hr class="hidden">
+<div class="container about-row portfolio hidden" id="portfolio2">
+  <div class="about-text">
+    <div class="title">
+      <h3>JS Calculator</h3>
     </div>
-    <div class="about-img">
-      <img src="./images/A3_square.png" id="img3">
+
+    <div class="description">
+      <h5>A simple JavaScript calculator app written for the Odin Project curriculum.</h5>
+    </div>
+
+    <div class="container demo-repo-click">
+      <a href="https://azimuthgambit.github.io/calculator/" target="_blank">demo</a>
+      <a href="https://github.com/azimuthgambit/calculator" target="_blank">repo</a>
     </div>
   </div>
 
+  <div class="about-img">
+    <img src=
+    "./images/calculator.jpg"
+    alt="Calculator app screenshot"
+    title="Calculator app"
+    class="portfolio-img"
+    id="calculator-img">
+  </div>
+
+</div>
+
+
+
+
+<hr class="hidden">
+<div class="container about-row portfolio hidden" id="portfolio3">
+  <div class="about-text">
+    <div class="title">
+      <h3>etch-a-sketch</h3>
+    </div>
+
+    <div class="description">
+      <h5>An etch-a-sketch app built for the Odin Project curriculum. Generates a grid and demonstrates a few different DOM manipulation methods.</h5>
+    </div>
+
+    <div class="container demo-repo-click">
+      <a href="https://azimuthgambit.github.io/etch-a-sketch/" target="_blank">demo</a>
+      <a href="https://github.com/azimuthgambit/etch-a-sketch" target="_blank">repo</a>
+    </div>
+  </div>
+
+  <div class="about-img">
+    <img src=
+    "./images/etch-a-sketch.png"
+    alt="Etch A Sketch app screenshot"
+    title="Etch A Sketch app"
+    class="portfolio-img"
+    id="etch-a-sketch-img">
+  </div>
+
+</div>
+
+
+<hr class="hidden">
+<div class="container about-row hidden" id="about4">
+  <div class="about-img">
+    <img src="./images/david2.jpg" class="portrait" id="img3">
+  </div>
+  <div class="about-text">
+    <h5>Let's talk about what I can do for you and your team.</h5>
+  </div>
 </div>
 
 
 <div class="container contact ">
-  <div class="filler"><h5>so drop me a line:</h5></div>
+  <div class="filler"><h5>drop me a line:</h5></div>
     <div class="container contact-icons">
       <a href="mailto:azimuth.gambit@gmail.com" class="fas fa-envelope-square"></a>
       <a href="https://github.com/azimuthgambit" class="fab fa-github-square"></a>
@@ -101,7 +189,7 @@
 </div>
 
 
-<div class="footer ">© Azimuth Gambit 2019 </div>
+<div class="footer ">© Azimuth Gambit 2019</div>
 
 <script>
 
@@ -123,18 +211,17 @@ const animateHTML = function() {
     window.addEventListener('resize', init);
   }
   function checkPosition() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
+
     for (var i = 0; i < elems.length; i++) {
       var positionFromTop = elems[i].getBoundingClientRect().top;
-      console.log((positionFromTop / windowHeight).toFixed(2));
       if (positionFromTop / windowHeight <= 0.65) {
         elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
-      if (!elems[1].classList.value.includes('hidden')) {
-        bodyId.classList.add('fade-in-body');
       }
-      // if (!elems[elems.length-4].classList.value.includes('hidden')) {
-      //   elems[elems.length-2].classList.replace('hidden', 'fade-in-element');
-      //   elems[elems.length-1].classList.replace('hidden', 'fade-in-element');
-      // }
+      if (!elems[1].classList.value.includes('hidden')) {
+        bodyId.style.backgroundColor = `hsl(214, 40%, ${scrolled}%)` ;
       }
     }
   }
@@ -145,27 +232,6 @@ const animateHTML = function() {
 animateHTML().init();
 
 
-// window.onscroll = function() {scrollFunction()};
-// function scrollFunction() {
-//   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-//   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//   var scrolled = (winScroll / height) * 1000;
-//   // console.log(Math.floor(scrolled));
-//   if (scrolled >= 20) { bodyId.classList.add('fade-in-body'); }
-//   // if (scrolled >= 15) {
-//   if (scrolled >= aboutOne.offsetTop/3) {
-//     // document.getElementById("about1").style.opacity = '1';
-//     aboutOne.classList.replace( 'hidden', 'fade-in-element' );
-//   }
-//   if (scrolled >= aboutTwo.offsetTop/3) {
-//     // document.getElementById("about2").style.opacity = '1';
-//     aboutTwo.classList.replace( 'hidden', 'fade-in-element' );
-//   }
-//   if (scrolled >= aboutThree.offsetTop/3) {
-//     // document.getElementById("about3").style.opacity = '1';
-//     aboutThree.classList.replace( 'hidden', 'fade-in-element' );
-//   }
-// }
 </script>
 
 </body>
