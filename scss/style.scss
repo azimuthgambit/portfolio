@@ -145,15 +145,14 @@ $about-icon-width: calc(4rem + 1vw);
   margin: 3vh 0;
   height: auto;
   grid:auto/auto;
-  img {
-    border-radius:2vw;
-  }
+  img { border-radius:2vw; }
   .title {
     text-align:center;
   }
   .portrait {
     width:$about-std-width;
-    max-width:$about-max-width;}
+    max-width:$about-max-width;
+  }
   .portfolio-img {
     width:$about-std-width*.4;
     max-width:$about-max-width*.4;
@@ -182,6 +181,7 @@ $about-icon-width: calc(4rem + 1vw);
     grid: auto / auto auto;
     grid-gap: 2vw;
     #hello-text {text-align:center;}
+    img { border-radius:2rem; }
     .portrait   { width:45vw; }
     .printer    { width:30vw; }
     .about-icons{ max-width:30rem; max-height:30rem;}

@@ -256,6 +256,9 @@ hr {
   .about-row #hello-text {
     text-align: center;
   }
+  .about-row img {
+    border-radius: 2rem;
+  }
   .about-row .portrait {
     width: 45vw;
   }
