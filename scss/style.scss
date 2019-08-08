@@ -13,14 +13,26 @@ $desktop: 1024px;
     from { opacity: 0; transform: scale(.85,.85); filter: blur(2px);}
     to   { opacity: 1;}
   }
-.fade-in-element { animation: fade-in 0.8s ease-out forwards; }
+.fade-in-element { animation: fade-in 1s ease forwards; }
 
+@keyframes fade-in-wel {
+    from {
+      opacity: 0;
+      // transform: scale(.95,.95);
+      filter: blur(2px);
+    }
+    to { opacity: 1; }
+  }
+.fade-in-welcome { animation: fade-in-wel 1.5s ease forwards; }
 
-// @keyframes fade-in-background {
-//     from { background-color:#121212; }
-//     to   { background-color: hsl(214, 40%, 10%); }
-// }
-// .fade-in-body { animation: fade-in-background 1.2s forwards; }
+@keyframes fade-in-hi {
+    from {
+      opacity: 0;
+      filter: blur(4px);
+    }
+    to   { opacity: 1;}
+  }
+.fade-in-hello { animation: fade-in-hi 1.5s ease forwards; }
 
 
 /* Base Styles
@@ -74,32 +86,33 @@ h6 { font-size: 1.2rem; line-height: 1.6;  letter-spacing: 0; }
 
 p {  margin-top: 0; }
 
+a { color:snow; }
+
 hr {
   width:80vw;
-  max-width:$body-max-width;
+  max-width:$body-max-width*.5;
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
   border-top: 1px solid snow;
 }
 
-/* Layout
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+///////////////// WELCOME SECTION /////////////////
 .container {
   display: grid;
-  border-radius: 4px;
 }
 
 .welcome {
   grid-template-columns: [first] auto [line2] minmax($body-min-width, 50rem) [line3] auto [last];
-  height:65vh;
+  height:42vh;
   width:100%;
 }
 
 #welcome-rows {
   grid-column-start: line2;
   grid-column-end: line3;
-  grid-template-rows: 45vh 5vh;
+  grid-template-rows: 35vh 5vh;
   justify-content: center;
   text-align:center;
   width:100%
@@ -126,37 +139,49 @@ $about-min-width: 15rem;
 $about-std-width: 90vw;
 $about-max-width: 60rem;
 
+$about-icon-width: calc(4rem + 1vw);
+
 .about-row {
   margin: 3vh 0;
   height: auto;
   grid:auto/auto;
-
-  .title { text-align:center; }
-  .portrait { width:$about-std-width; max-width:$about-max-width; border-radius:2vw;}
-  .portfolio-img { width:$about-std-width*.8; max-width:$about-max-width*.8; border-radius:1vw;}
+  img {
+    border-radius:2vw;
+  }
+  .title {
+    text-align:center;
+  }
+  .portrait {
+    width:$about-std-width;
+    max-width:$about-max-width;}
+  .portfolio-img {
+    width:$about-std-width*.4;
+    max-width:$about-max-width*.4;
+    // img {border-radius:1vw;}
+  }
   .about-text { width:$about-std-width; max-width:$about-max-width;}
   > div:nth-child(1) { place-self: center center; text-align:center; }
   > div:nth-child(2) { place-self: center center; text-align:center; }
 
   .about-icons {
-    width: 30vw;
-    height: 30vw;
-    min-width: 15rem;
+    width: $about-std-width*.5;
+    height: $about-std-width*.2;
+    max-width:$about-max-width*.5;
+    max-height:$about-max-width*.5;
     min-height: 15rem;
-    // @media only screen and (min-width:$phone) { width:$body-min-width; height:30rem; }
-    grid: 1fr 1fr / 1fr 1fr ;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-gap:2vw;
     place-items: center center;
     place-self: center end;
-    i {
-      font-size: calc(4rem + 2vw);
-      color:snow;
-    }
+    img { width: $about-icon-width; }
+    i { font-size: $about-icon-width; color:snow; }
   }
 
   @media only screen and (min-width:$desktop) {
     grid: auto / auto auto;
     grid-gap: 2vw;
-
+    #hello-text {text-align:center;}
     .portrait   { width:45vw; }
     .printer    { width:30vw; }
     .about-icons{ max-width:30rem; max-height:30rem;}
@@ -168,23 +193,26 @@ $about-max-width: 60rem;
   }
 }
 
+#img-bioprinter {background-color:snow;}
+
 ///////////////// PORTFOLIO SECTION /////////////////
 .portfolio{
   grid-auto-flow:row;
   place-items: center center;
   text-align:center;
   .demo-repo-click {
-    grid-template-columns: auto auto;
-    grid-gap: 5vw;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
+    justify-items: center;
     a {
       height: auto;
-      max-width: 20rem;
+      width: 10rem;
       padding: .5rem 1.5rem;
       margin-bottom: 2rem;
       color: snow;
       text-align: center;
-      // font-size: 2rem;
-      // font-weight: 400;
+      font-size: 1.5rem;
+      font-weight: 800;
       letter-spacing: .3rem;
       text-transform: uppercase;
       text-decoration: none;
@@ -234,7 +262,7 @@ $about-max-width: 60rem;
 }
 
 .footer {
-  height:20vh;
+  height:10vh;
   text-align:center;
-  margin: 6rem 0 3rem 0;
+  margin: 3rem 0;
 }

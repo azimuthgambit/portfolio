@@ -14,7 +14,33 @@
   }
 }
 .fade-in-element {
-  animation: fade-in 0.8s ease-out forwards;
+  animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in-wel {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in-welcome {
+  animation: fade-in-wel 1.5s ease forwards;
+}
+
+@keyframes fade-in-hi {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in-hello {
+  animation: fade-in-hi 1.5s ease forwards;
 }
 
 /* Base Styles
@@ -130,32 +156,33 @@ p {
   margin-top: 0;
 }
 
+a {
+  color: snow;
+}
+
 hr {
   width: 80vw;
-  max-width: 1400px;
+  max-width: 700px;
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
   border-top: 1px solid snow;
 }
 
-/* Layout
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
   display: grid;
-  border-radius: 4px;
 }
 
 .welcome {
   grid-template-columns: [first] auto [line2] minmax(300px, 50rem) [line3] auto [last];
-  height: 65vh;
+  height: 42vh;
   width: 100%;
 }
 
 #welcome-rows {
   grid-column-start: line2;
   grid-column-end: line3;
-  grid-template-rows: 45vh 5vh;
+  grid-template-rows: 35vh 5vh;
   justify-content: center;
   text-align: center;
   width: 100%;
@@ -176,18 +203,19 @@ hr {
   height: auto;
   grid: auto/auto;
 }
+.about-row img {
+  border-radius: 2vw;
+}
 .about-row .title {
   text-align: center;
 }
 .about-row .portrait {
   width: 90vw;
   max-width: 60rem;
-  border-radius: 2vw;
 }
 .about-row .portfolio-img {
-  width: 72vw;
-  max-width: 48rem;
-  border-radius: 1vw;
+  width: 36vw;
+  max-width: 24rem;
 }
 .about-row .about-text {
   width: 90vw;
@@ -202,22 +230,31 @@ hr {
   text-align: center;
 }
 .about-row .about-icons {
-  width: 30vw;
-  height: 30vw;
-  min-width: 15rem;
+  width: 45vw;
+  height: 18vw;
+  max-width: 30rem;
+  max-height: 30rem;
   min-height: 15rem;
-  grid: 1fr 1fr/1fr 1fr;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 2vw;
   place-items: center center;
   place-self: center end;
 }
+.about-row .about-icons img {
+  width: calc(4rem + 1vw);
+}
 .about-row .about-icons i {
-  font-size: calc(4rem + 2vw);
+  font-size: calc(4rem + 1vw);
   color: snow;
 }
 @media only screen and (min-width: 1024px) {
   .about-row {
     grid: auto/auto auto;
     grid-gap: 2vw;
+  }
+  .about-row #hello-text {
+    text-align: center;
   }
   .about-row .portrait {
     width: 45vw;
@@ -245,22 +282,29 @@ hr {
   }
 }
 
+#img-bioprinter {
+  background-color: snow;
+}
+
 .portfolio {
   grid-auto-flow: row;
   place-items: center center;
   text-align: center;
 }
 .portfolio .demo-repo-click {
-  grid-template-columns: auto auto;
-  grid-gap: 5vw;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1vw;
+  justify-items: center;
 }
 .portfolio .demo-repo-click a {
   height: auto;
-  max-width: 20rem;
+  width: 10rem;
   padding: 0.5rem 1.5rem;
   margin-bottom: 2rem;
   color: snow;
   text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -308,9 +352,9 @@ hr {
 }
 
 .footer {
-  height: 20vh;
+  height: 10vh;
   text-align: center;
-  margin: 6rem 0 3rem 0;
+  margin: 3rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

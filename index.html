@@ -18,7 +18,7 @@
   <div class="filler"></div>
     <div class="container column" id="welcome-rows">
       <div class="welcome-a"> Azimuth Gambit <br> <h6> アズミス・ガンビト </h6> </div>
-      <div class="welcome-b">Mechanical Engineer ・ Front-End Developer ・ Consultant</div>
+      <div class="welcome-b">Mechanical Design Engineer ・ Front End Developer ・ Consultant</div>
     </div>
   <div class="filler"></div>
 </div>
@@ -26,12 +26,12 @@
 
 <div class="container about-row hidden" id="about1">
   <div class="about-img">
+    <h5 id="hello-text">Hi, I'm David Noble.</h5>
     <img src="./images/david1.jpg" class="portrait" id="img1">
   </div>
 
   <div class="about-text">
-    <h5>Hi, I'm David Noble.  </h5>
-    <h5>I live in Philadelphia, PA.  My background is in Mechanical Engineering, Machine Design, and Robotics.  I am a licensed Professional Engineer.  I have a decade of project experience behind me and I am at my most engaged and effective when I am building things. </h5>
+    <h5><br><br>I live in Philadelphia, PA. My background is in Mechanical Engineering, Machine Design, and Robotics. I am a licensed Professional Engineer with a decade of project experience. I am my most engaged and effective when I am designing and building things. </h5>
     <h5>In my spare time, I train Shotokan Karate, hike in the Wissahickon, play with my kids, play classical piano, dabble with synthesizers, and speak rudimentary Japanese. </h5>
   </div>
 </div>
@@ -44,7 +44,7 @@
       <h3>Allevi-3 Bioprinter</h3>
     </div>
     <div class="description">
-      <h5>I've designed and built many robots and machines, most recently this very cool 3D Bioprinter for Allevi, Inc. </h5>
+      <h5>I've designed and built many robots and machines, most recently this 3D Bioprinter for <a href="https://allevi3d.com" target="_blank">Allevi, Inc.</a></h5>
     </div>
   </div>
 
@@ -63,14 +63,20 @@
 <hr class="hidden">
 <div class="container about-row hidden" id="about3">
   <div class="container about-icons">
-    <i class="fab fa-html5"></i>
-    <i class="fab fa-css3-alt"></i>
-    <i class="fab fa-js-square"></i>
-    <i class="fab fa-git-square"></i>
+    <div><i class="fab fa-html5"></i></div>
+    <div><i class="fab fa-css3-alt"></i></div>
+    <div><i class="fab fa-js-square"></i></div>
+    <div><i class="fab fa-git"></i></div>
+    <div><i class="fab fa-free-code-camp"></i></div>
+    <div>
+      <a href="https://www.theodinproject.com/" target="_blank">
+        <img src="./images/odin-logo.svg">
+      </a>
+    </div>
   </div>
   <div class="about-text">
-    <h5>I also build things with code.  Since there's so much more being built with bits than atoms nowadays, I've tought myself Front End Development.</h5>
-    <h5>I'm a huge fan of dark themes.</h5>
+    <h5>I also design and build with code.  There's just so much being built with code nowadays, so I've taught myself Front End Development.</h5>
+    <h5>I'm a huge fan of dark themes and standing desks.</h5>
   </div>
 </div>
 
@@ -84,7 +90,7 @@
     </div>
 
     <div class="description">
-      <h5>App for tracking your book collection. Built for the Odin Project curriculum to demonstrate object creators and other JavaScript methods.</h5>
+      <h5>JS app for tracking your book collection. Built for the Odin Project curriculum using object creators and other methods.</h5>
     </div>
 
     <div class="container demo-repo-click">
@@ -113,7 +119,7 @@
     </div>
 
     <div class="description">
-      <h5>A simple JavaScript calculator app written for the Odin Project curriculum.</h5>
+      <h5>JS calculator built for the Odin Project curriculum.</h5>
     </div>
 
     <div class="container demo-repo-click">
@@ -144,7 +150,7 @@
     </div>
 
     <div class="description">
-      <h5>An etch-a-sketch app built for the Odin Project curriculum. Generates a grid and demonstrates a few different DOM manipulation methods.</h5>
+      <h5>JS etch-a-sketch app built for the Odin Project curriculum.</h5>
     </div>
 
     <div class="container demo-repo-click">
@@ -171,7 +177,7 @@
     <img src="./images/david2.jpg" class="portrait" id="img3">
   </div>
   <div class="about-text">
-    <h5>Let's talk about what I can do for you and your team.</h5>
+    <h5><br>So, let's talk about what I can do for you and your team.</h5>
   </div>
 </div>
 
@@ -189,13 +195,21 @@
 </div>
 
 
-<div class="footer ">© Azimuth Gambit 2019</div>
+<div class="footer ">© Azimuth Gambit 2019 | designed and built by David Noble</div>
 
 <script>
 
 const bodyId  = document.getElementById('bodyId');
 const welcome = document.getElementById('welcome');
-bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-element' ); }
+welcome.addEventListener("webkitAnimationEnd", helloLoad);
+const aboutOne= document.getElementById('about1');
+bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-welcome' ); }
+
+function helloLoad() {
+  console.log('helloload triggered');
+  aboutOne.classList.replace( 'hidden', 'fade-in-hello' );
+  bodyId.style.backgroundColor = `hsl(214, 40%, 10%)`
+}
 
 const elems = document.querySelectorAll('.hidden');
 
@@ -215,9 +229,9 @@ const animateHTML = function() {
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
 
-    for (var i = 0; i < elems.length; i++) {
+    for (var i = 2; i < elems.length; i++) {
       var positionFromTop = elems[i].getBoundingClientRect().top;
-      if (positionFromTop / windowHeight <= 0.65) {
+      if (positionFromTop / windowHeight <= 0.75) {
         elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
       }
       if (!elems[1].classList.value.includes('hidden')) {
