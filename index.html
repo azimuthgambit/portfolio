@@ -14,6 +14,8 @@
 </head>
 <body id="bodyId">
 
+<noscript>Please enable JavaScript for this site to function properly.</noscript>
+
 <div class="container welcome hidden" id="welcome">
   <div class="filler"></div>
     <div class="container column" id="welcome-rows">
@@ -220,50 +222,64 @@
 
 const bodyId  = document.getElementById('bodyId');
 const welcome = document.getElementById('welcome');
-welcome.addEventListener("webkitAnimationEnd", helloLoad);
-const aboutOne= document.getElementById('about1');
-bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-welcome' ); }
-
-function helloLoad() {
-  console.log('helloload triggered');
-  aboutOne.classList.replace( 'hidden', 'fade-in-hello' );
-  bodyId.style.backgroundColor = `hsl(214, 40%, 10%)`
-}
-
+const aboutOne = document.getElementById('about1');
 const elems = document.querySelectorAll('.hidden');
 
-const animateHTML = function() {
-  var windowHeight;
-  function init() {
-    windowHeight = window.innerHeight;
-    addEventHandlers();
-    checkPosition();
-  }
-  function addEventHandlers() {
-    window.addEventListener('scroll', checkPosition);
-    window.addEventListener('resize', init);
-  }
-  function checkPosition() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
+bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-welcome' ); }
 
-    for (var i = 2; i < elems.length; i++) {
-      var positionFromTop = elems[i].getBoundingClientRect().top;
-      if (positionFromTop / windowHeight <= 0.75) {
-        elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
-      }
-      if (!elems[1].classList.value.includes('hidden')) {
-        bodyId.style.backgroundColor = `hsl(214, 40%, ${scrolled}%)` ;
-      }
-    }
-  }
-  return {
-    init: init
+welcome.addEventListener('webkitAnimationEnd', helloLoad);
+
+function helloLoad() {
+  aboutOne.classList.replace( 'hidden', 'fade-in-hello' );
+  bodyId.style.backgroundColor = `hsl(214, 40%, 10%)`;
+}
+
+// generic debounce function to prevent janky page performance
+function debounce(func, wait = 20, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
   };
 };
-animateHTML().init();
 
+let windowHeight;
+
+function init() {
+  windowHeight = window.innerHeight;
+  console.log(`windowHeight: ${windowHeight}`);
+  addEventHandlers();
+  checkPosition();
+}
+
+function addEventHandlers() {
+  window.addEventListener('scroll', debounce(checkPosition));
+  window.addEventListener('resize', debounce(init));
+}
+
+function checkPosition() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
+  for (let i = 2; i < elems.length; i++) {
+    const positionFromTop = elems[i].getBoundingClientRect().top;
+    if (positionFromTop / windowHeight <= 0.75) {
+      elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
+    }
+    if (!elems[1].classList.value.includes('hidden')) {
+      bodyId.style.backgroundColor = `hsl(214, 40%, ${scrolled}%)` ;
+    }
+  }
+}
+
+init();
 
 </script>
 
