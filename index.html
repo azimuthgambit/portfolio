@@ -51,12 +51,15 @@
   </div>
 
   <div class="about-img">
-    <a href="https://allevi3d.com/allevi-3" target="_blank">
-      <img src="./images/A3_square.png"
-      alt="Allevi-3 Bioprinter"
+    <!-- <a href="https://allevi3d.com/allevi-3" target="_blank"> -->
+    <a href="https://youtu.be/MlTiR8QadnU" target="_blank">
+      <img
+      src="./images/A3_square.png"
       title="Allevi-3 Bioprinter"
+      alt="Allevi-3 Bioprinter"
       class="portfolio-img"
-      id="img-bioprinter">
+      id="img-bioprinter"
+      >
     </a>
   </div>
 </div>
@@ -103,12 +106,13 @@
 
   <div class="about-img">
     <a href="https://azimuthgambit.github.io/bookshelf/" target="_blank">
-      <img src=
-      "./images/bookshelf.jpg"
-      alt="Bookshelf app screenshot"
+      <img
+      src="./images/bookshelf.jpg"
       title="Bookshelf app"
+      alt="Bookshelf app screenshot"
       class="portfolio-img"
-      id="bookshelf-img">
+      id="bookshelf-img"
+      >
     </a>
   </div>
 
@@ -134,12 +138,13 @@
 
   <div class="about-img">
     <a href="https://azimuthgambit.github.io/calculator/" target="_blank">
-      <img src=
-      "./images/calculator.jpg"
+      <img
+      src="./images/calculator.jpg"
+      title="Calculator app"
       alt="Calculator app screenshot"
-      title="Calculator app"O3-World-Coding-Exercise
       class="portfolio-img"
-      id="calculator-img">
+      id="calculator-img"
+      >
     </a>
   </div>
 
@@ -167,12 +172,13 @@
 
   <div class="about-img">
     <a href="https://azimuthgambit.github.io/etch-a-sketch/" target="_blank">
-      <img src=
-      "./images/etch-a-sketch.png"
-      alt="Etch A Sketch app screenshot"
+      <img
+      src="./images/etch-a-sketch.png"
       title="Etch A Sketch app"
+      alt="Etch A Sketch app screenshot"
       class="portfolio-img"
-      id="etch-a-sketch-img">
+      id="etch-a-sketch-img"
+      >
     </a>
   </div>
 
@@ -185,12 +191,22 @@
     <h5><br>My colleagues have left glowing recommendations on LinkedIn.</h5>
   </div>
   <div class="about-img">
-    <a href="https://www.linkedin.com/in/david-noble-p-e-a782b127/" target="_blank">
-      <img src="./images/linkedin_recs.png" class="portrait" alt="LinkedIn recommendations" id="linkedin_recs">
-    </a>
+    <img
+    src="./images/linkedin_recs.png"
+    title="LinkedIn Recommendations"
+    alt="LinkedIn Recommendations"
+    class="portfolio-img"
+    id="linkedin_recs"
+    >
   </div>
 </div>
 
+<!-- modal image -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
 
 <hr class="hidden">
 <div class="container about-row hidden" id="about4">
@@ -235,7 +251,7 @@ function helloLoad() {
 }
 
 // generic debounce function to prevent janky page performance
-function debounce(func, wait = 20, immediate = true) {
+function debounce(func, wait = 10, immediate = true) {
   var timeout;
   return function() {
     var context = this, args = arguments;
@@ -254,7 +270,7 @@ let windowHeight;
 
 function init() {
   windowHeight = window.innerHeight;
-  console.log(`windowHeight: ${windowHeight}`);
+  // console.log(`windowHeight: ${windowHeight}`);
   addEventHandlers();
   checkPosition();
 }
@@ -280,6 +296,29 @@ function checkPosition() {
 }
 
 init();
+
+// MODAL IMAGE
+
+const modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+const img = document.getElementById("linkedin_recs");
+const modalImg = document.getElementById("img01");
+const captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+const span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
 
 </script>
 
