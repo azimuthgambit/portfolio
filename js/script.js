@@ -10,23 +10,25 @@ welcome.addEventListener('webkitAnimationEnd', helloLoad);
 function helloLoad() {
   aboutOne.classList.replace( 'hidden', 'fade-in-hello' );
   bodyId.style.backgroundColor = `hsl(214, 40%, 10%)`;
+  init();
 }
 
 // generic debounce function to prevent janky page performance
-function debounce(func, wait = 10, immediate = true) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-};
+// skeptical whether this actually improves performance, so disabled for now
+// function debounce(func, wait = 5, immediate = true) {
+//   var timeout;
+//   return function() {
+//     var context = this, args = arguments;
+//     var later = function() {
+//       timeout = null;
+//       if (!immediate) func.apply(context, args);
+//     };
+//     var callNow = immediate && !timeout;
+//     clearTimeout(timeout);
+//     timeout = setTimeout(later, wait);
+//     if (callNow) func.apply(context, args);
+//   };
+// };
 
 let windowHeight;
 
@@ -38,11 +40,14 @@ function init() {
 }
 
 function addEventHandlers() {
-  window.addEventListener('scroll', debounce(checkPosition));
-  window.addEventListener('resize', debounce(init));
+  // window.addEventListener('scroll', debounce(checkPosition));
+  // window.addEventListener('resize', debounce(init));
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('resize', init);
 }
 
 function checkPosition() {
+  console.count('checkposition');
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
@@ -57,7 +62,7 @@ function checkPosition() {
   }
 }
 
-init();
+// init();
 
 // MODAL IMAGE
 
