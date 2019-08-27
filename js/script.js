@@ -13,35 +13,15 @@ function helloLoad() {
   init();
 }
 
-// generic debounce function to prevent janky page performance
-// skeptical whether this actually improves performance, so disabled for now
-// function debounce(func, wait = 5, immediate = true) {
-//   var timeout;
-//   return function() {
-//     var context = this, args = arguments;
-//     var later = function() {
-//       timeout = null;
-//       if (!immediate) func.apply(context, args);
-//     };
-//     var callNow = immediate && !timeout;
-//     clearTimeout(timeout);
-//     timeout = setTimeout(later, wait);
-//     if (callNow) func.apply(context, args);
-//   };
-// };
-
 let windowHeight;
 
 function init() {
   windowHeight = window.innerHeight;
-  // console.log(`windowHeight: ${windowHeight}`);
   addEventHandlers();
   checkPosition();
 }
 
 function addEventHandlers() {
-  // window.addEventListener('scroll', debounce(checkPosition));
-  // window.addEventListener('resize', debounce(init));
   window.addEventListener('scroll', checkPosition);
   window.addEventListener('resize', init);
 }
@@ -62,7 +42,6 @@ function checkPosition() {
   }
 }
 
-// init();
 
 // MODAL IMAGE
 
