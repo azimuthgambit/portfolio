@@ -53,7 +53,7 @@ function checkPosition() {
   const scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
   for (let i = 2; i < elems.length; i++) {
     const positionFromTop = elems[i].getBoundingClientRect().top;
-    if (positionFromTop / windowHeight <= 0.75) {
+    if (positionFromTop / windowHeight <= 0.85) {
       elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
     }
     if (!elems[1].classList.value.includes('hidden')) {
