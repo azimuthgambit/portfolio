@@ -64,3 +64,11 @@ const span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+window.addEventListener('keydown', keyStroke);
+function keyStroke(e) {
+  if (e.code === 'Escape') { 
+    modal.style.display = "none";
+    window.removeEventListener('keydown', keyStroke);
+  }
+}
