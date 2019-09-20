@@ -17,7 +17,7 @@ $desktop: 1024px;
     }
     to { opacity: 1; }
   }
-.fade-in-welcome { animation: fade-in-wel 1.5s ease forwards; }
+.fade-in-welcome { animation: fade-in-wel 1s ease forwards; }
 
 @keyframes fade-in-hi {
     from {
@@ -26,13 +26,13 @@ $desktop: 1024px;
     }
     to   { opacity: 1;}
   }
-.fade-in-hello { animation: fade-in-hi 1.5s ease forwards; }
+.fade-in-hello { animation: fade-in-hi 1s ease forwards; }
 
 @keyframes fade-in-elem {
   from { opacity: 0; transform: scale(.85,.85); filter: blur(2px);}
   to   { opacity: 1;}
 }
-.fade-in-element { animation: fade-in-elem 1s ease forwards; }
+.fade-in-element { animation: fade-in-elem .5s ease forwards; }
 
 
 html {
