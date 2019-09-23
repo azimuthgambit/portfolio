@@ -1,4 +1,12 @@
 @charset "UTF-8";
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
 .hidden {
   opacity: 0;
 }
@@ -13,7 +21,7 @@
   }
 }
 .fade-in-welcome {
-  animation: fade-in-wel 1.5s ease forwards;
+  animation: fade-in-wel 1s ease forwards;
 }
 
 @keyframes fade-in-hi {
@@ -26,7 +34,7 @@
   }
 }
 .fade-in-hello {
-  animation: fade-in-hi 1.5s ease forwards;
+  animation: fade-in-hi 1s ease forwards;
 }
 
 @keyframes fade-in-elem {
@@ -40,9 +48,14 @@
   }
 }
 .fade-in-element {
-  animation: fade-in-elem 1s ease forwards;
+  animation: fade-in-elem 0.5s ease forwards;
 }
 
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%;
 }

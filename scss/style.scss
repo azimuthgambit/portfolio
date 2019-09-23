@@ -1,3 +1,16 @@
+// Base Styles and Typography sections below are adapted from:
+
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+
+// SASS Variables
+
 // $body-min-width : 30rem;
 $body-min-width : 300px;
 $body-max-width : 1400px;
@@ -34,6 +47,12 @@ $desktop: 1024px;
 }
 .fade-in-element { animation: fade-in-elem .5s ease forwards; }
 
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
 
 html {
   font-size: 62.5%;  // scales rem units to 10px each
