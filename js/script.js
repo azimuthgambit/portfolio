@@ -27,7 +27,8 @@ function addEventHandlers() {
 }
 
 function checkPosition() {
-  console.count('checkposition');
+  // to do: if excessive, implement debounce
+  // console.count('checkposition');
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
