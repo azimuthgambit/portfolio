@@ -131,7 +131,7 @@ hr {
 }
 
 // reference boundary for troubleshooting grid divs etc
-.container, .container > div, .container > a { border: 0.5px dashed snow; border-radius: .5rem; }
+// .container, .container > div, .container > a { border: 0.5px dashed snow; border-radius: .5rem; }
 
 .welcome-a {
   align-self:end;
@@ -179,7 +179,7 @@ $about-icon-width: calc(4rem + 1vw);
     min-height:25rem;
     width: $about-std-width*.6;
     height: $about-std-width*.6;
-    max-width:$about-max-width*.4;
+    max-width:$about-max-width*.7;
     max-height:$about-max-width*.4;
     min-height: 15rem;
     grid-template-columns: auto auto auto;
@@ -196,7 +196,7 @@ $about-icon-width: calc(4rem + 1vw);
     #hello-text {text-align:center;}
     .portrait   { width:45vw; }
     .printer    { width:30vw; }
-    .about-icons{ max-width:25rem; max-height:25rem;}
+    .about-icons{ max-width:30rem; max-height:30rem;}
     .about-text { width:45vw;
       h5 {text-align: left;}
     }

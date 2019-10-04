@@ -196,11 +196,6 @@ hr {
   width: 100%;
 }
 
-.container, .container > div, .container > a {
-  border: 0.5px dashed snow;
-  border-radius: 0.5rem;
-}
-
 .welcome-a {
   align-self: end;
   font-weight: 100;
@@ -247,7 +242,7 @@ hr {
   min-height: 25rem;
   width: 54vw;
   height: 54vw;
-  max-width: 24rem;
+  max-width: 42rem;
   max-height: 24rem;
   min-height: 15rem;
   grid-template-columns: auto auto auto;
@@ -277,8 +272,8 @@ hr {
     width: 30vw;
   }
   .about-row .about-icons {
-    max-width: 25rem;
-    max-height: 25rem;
+    max-width: 30rem;
+    max-height: 30rem;
   }
   .about-row .about-text {
     width: 45vw;
