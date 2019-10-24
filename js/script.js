@@ -3,9 +3,10 @@ const welcome = document.getElementById('welcome');
 const aboutOne = document.getElementById('about1');
 const elems = document.querySelectorAll('.hidden');
 
-bodyId.onload = () => { welcome.classList.replace( 'hidden', 'fade-in-welcome' ); }
-
-welcome.addEventListener('webkitAnimationEnd', helloLoad);
+bodyId.onload = () => { 
+  welcome.classList.replace( 'hidden', 'fade-in-welcome' );
+  setTimeout( () => { helloLoad(); }, 800 );
+}
 
 function helloLoad() {
   aboutOne.classList.replace( 'hidden', 'fade-in-hello' );
@@ -56,6 +57,7 @@ img.onclick = function(){
   modal.style.display = "block";
   modalImg.src = this.src;
   captionText.innerHTML = this.alt;
+  window.addEventListener('keydown', keyStroke);
 }
 
 // Get the <span> element that closes the modal
@@ -66,7 +68,6 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-window.addEventListener('keydown', keyStroke);
 function keyStroke(e) {
   if (e.code === 'Escape') { 
     modal.style.display = "none";

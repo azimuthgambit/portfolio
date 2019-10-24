@@ -14,7 +14,6 @@
 @keyframes fade-in-wel {
   from {
     opacity: 0;
-    filter: blur(2px);
   }
   to {
     opacity: 1;
@@ -27,7 +26,6 @@
 @keyframes fade-in-hi {
   from {
     opacity: 0;
-    filter: blur(4px);
   }
   to {
     opacity: 1;
@@ -41,7 +39,6 @@
   from {
     opacity: 0;
     transform: scale(0.85, 0.85);
-    filter: blur(2px);
   }
   to {
     opacity: 1;
@@ -380,25 +377,25 @@ hr {
 /* Add Animation */
 .modal-content, #caption {
   -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
   animation-name: zoom;
-  animation-duration: 0.6s;
+  animation-duration: 0.5s;
 }
 
 @-webkit-keyframes zoom {
   from {
-    -webkit-transform: scale(0);
+    opacity: 0;
   }
   to {
-    -webkit-transform: scale(1);
+    opacity: 1;
   }
 }
 @keyframes zoom {
   from {
-    transform: scale(0);
+    opacity: 0;
   }
   to {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 /* The Close Button */
@@ -429,8 +426,6 @@ hr {
   display: grid;
   justify-content: center;
   width: 100%;
-  background-size: cover;
-  background-image: url("https://2um6b944etm332zlf4pb7a19-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/Fine-Art-Tom-Blachford-HAL9001.jpg");
 }
 .contact .filler h5, .contact .filler h6 {
   display: grid;
