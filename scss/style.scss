@@ -43,7 +43,7 @@ $desktop: 1024px;
 @keyframes fade-in-elem {
   from { 
     opacity: 0; 
-    transform: scale(.85,.85); 
+    // transform: scale(.85,.85); 
     // filter: blur(2px);
   }
   to   { opacity: 1;}
