@@ -183,6 +183,8 @@ hr {
   .about-row > div:nth-child(2) {
     place-self: center center;
     text-align: center; }
+  .about-row #stylus-logo {
+    filter: invert(100%); }
   .about-row .about-icons {
     display: grid;
     min-width: 25rem;

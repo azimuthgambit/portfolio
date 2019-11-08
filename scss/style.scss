@@ -177,6 +177,10 @@ $about-icon-width: calc(4rem + 1vw);
   > div:nth-child(1) { place-self: center center; text-align:center; }
   > div:nth-child(2) { place-self: center center; text-align:center; }
 
+  #stylus-logo {
+    filter: invert(100%);
+  }
+  
   .about-icons {
     display: grid;
     min-width:25rem;
