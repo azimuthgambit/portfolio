@@ -5,7 +5,7 @@ const elems = document.querySelectorAll('.hidden');
 
 bodyId.onload = () => { 
   welcome.classList.replace( 'hidden', 'fade-in-welcome' );
-  setTimeout( () => { helloLoad(); }, 800 );
+  setTimeout(() => { helloLoad() }, 800 );
 }
 
 function helloLoad() {
@@ -30,7 +30,8 @@ function addEventHandlers() {
 function checkPosition() {
   // to do: if excessive, implement debounce
   // console.count('checkposition');
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  // const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const winScroll = window.scrollY;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
   for (let i = 2; i < elems.length; i++) {
@@ -64,9 +65,7 @@ img.onclick = function(){
 const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+span.onclick = () => modal.style.display = "none";
 
 function keyStroke(e) {
   if (e.code === 'Escape') { 
