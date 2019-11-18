@@ -1,7 +1,7 @@
 const bodyId  = document.getElementById('bodyId');
 const welcome = document.getElementById('welcome');
 const aboutOne = document.getElementById('about1');
-const elems = document.querySelectorAll('.hidden');
+const elems = document.querySelectorAll('.elem');
 
 bodyId.onload = () => { 
   welcome.classList.replace( 'hidden', 'fade-in-welcome' );
@@ -28,21 +28,17 @@ function addEventHandlers() {
 }
 
 function checkPosition() {
-  // to do: if excessive, implement debounce
-  // console.count('checkposition');
-  // const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const winScroll = window.scrollY;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled =  (10 + winScroll / height / .05).toFixed(0) ;
-  for (let i = 2; i < elems.length; i++) {
-    const positionFromTop = elems[i].getBoundingClientRect().top;
-    if (positionFromTop / windowHeight <= 0.85) {
-      elems[i].className = elems[i].className.replace('hidden', 'fade-in-element');
+  const scrolled = (10 + window.scrollY / height / .05).toFixed(0) ;
+  elems.forEach(elem =>  {
+    const positionFromTop = elem.getBoundingClientRect().top;
+    if (positionFromTop / windowHeight <= 0.82) {
+      elem.className = elem.className.replace('hidden', 'fade-in-element');
     }
-    if (!elems[1].classList.value.includes('hidden')) {
+    if (!elem.classList.value.includes('hidden')) {
       bodyId.style.backgroundColor = `hsl(214, 40%, ${scrolled}%)` ;
     }
-  }
+  });
 }
 
 
@@ -67,6 +63,7 @@ const span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = () => modal.style.display = "none";
 
+// also close modal with escape key
 function keyStroke(e) {
   if (e.code === 'Escape') { 
     modal.style.display = "none";
