@@ -2,6 +2,7 @@ const bodyId  = document.getElementById('bodyId');
 const welcome = document.getElementById('welcome');
 const aboutOne = document.getElementById('about1');
 const elems = document.querySelectorAll('.elem');
+let windowHeight;
 
 bodyId.onload = () => { 
   welcome.classList.replace( 'hidden', 'fade-in-welcome' );
@@ -11,20 +12,23 @@ bodyId.onload = () => {
 function helloLoad() {
   aboutOne.classList.replace( 'hidden', 'fade-in-hello' );
   bodyId.style.backgroundColor = `hsl(214, 40%, 10%)`;
-  init();
-}
-
-let windowHeight;
-
-function init() {
-  windowHeight = window.innerHeight;
+  setWindowHeight();
   addEventHandlers();
   checkPosition();
 }
 
+function setWindowHeight() {
+  windowHeight = window.innerHeight;
+}
+
 function addEventHandlers() {
-  window.addEventListener('scroll', checkPosition);
-  window.addEventListener('resize', init);
+  window.addEventListener('scroll', debounce(checkPosition));
+  window.addEventListener('resize', debounce(resize));
+}
+
+function resize() {
+  setWindowHeight();
+  checkPosition();
 }
 
 function checkPosition() {
@@ -40,6 +44,22 @@ function checkPosition() {
     }
   });
 }
+
+// generic debouncing function
+function debounce(func, wait = 10, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
 
 
 // MODAL IMAGE

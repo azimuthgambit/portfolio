@@ -18,6 +18,14 @@ $phone : 600px;
 $tablet: 768px;
 $desktop: 1024px;
 
+// dark theme layer colors
+$layer0: rgba(255,255,255,.00);
+$layer1: rgba(255,255,255,.07);
+$layer2: rgba(255,255,255,.09);
+$layer3: rgba(255,255,255,.12);
+$layer4: rgba(255,255,255,.15);
+$layer5: rgba(255,255,255,.18);
+
 .hidden { opacity:0; }
 
 // ANIMATIONS ON PAGE LOAD, SCROLL
@@ -25,30 +33,36 @@ $desktop: 1024px;
 @keyframes fade-in-wel {
     from {
       opacity: 0;
-      // filter: blur(2px);
     }
-    to { opacity: 1; }
+    to { 
+      opacity: 1; 
+    }
   }
 .fade-in-welcome { animation: fade-in-wel 1s ease forwards; }
 
 @keyframes fade-in-hi {
     from {
       opacity: 0;
-      // filter: blur(4px);
     }
-    to   { opacity: 1;}
+    to { 
+      opacity: 1;
+    }
   }
 .fade-in-hello { animation: fade-in-hi 1s ease forwards; }
 
 @keyframes fade-in-elem {
   from { 
-    opacity: 0; 
-    // transform: scale(.85,.85); 
-    // filter: blur(2px);
+    opacity: 0;
+    transform:translateY(15%)
   }
-  to   { opacity: 1;}
+  to   { 
+    opacity: 1;
+    transform:translateY(0)
+  }
 }
-.fade-in-element { animation: fade-in-elem .5s ease forwards; }
+.fade-in-element { 
+  animation: fade-in-elem .5s ease forwards; 
+}
 
 
 /* Base Styles
@@ -87,7 +101,9 @@ h6 { font-size: 1.2rem; line-height: 1.6;  letter-spacing: 0; }
 .welcome-a { font-size:4rem; }
 .welcome-b { font-size:1.3rem; }
 
-@media only screen and (min-width:$phone) {
+// @media only screen and (min-width:$phone) {
+// TO DO: UPDATE ALL MEDIA QUERIES TO THIS FORMAT
+@media (min-width: $phone) {
   h1 { font-size: 5.0rem; }
   h2 { font-size: 4.2rem; }
   h3 { font-size: 3.6rem; }
@@ -216,7 +232,7 @@ $about-icon-width: calc(4rem + 1vw);
 #img-bioprinter {background-color:snow;}
 
 ///////////////// PORTFOLIO SECTION /////////////////
-.portfolio{
+.portfolio {
   grid-auto-flow:row;
   place-items: center center;
   text-align:center;
@@ -224,6 +240,9 @@ $about-icon-width: calc(4rem + 1vw);
     grid-template-columns: 1fr 1fr;
     grid-gap: 1vw;
     justify-items: center;
+    button {
+      color: red;
+    }
     a {
       height: auto;
       width: 10rem;
@@ -237,10 +256,14 @@ $about-icon-width: calc(4rem + 1vw);
       text-transform: uppercase;
       text-decoration: none;
       white-space: nowrap;
-      background-color: transparent;
+      // background-color: transparent;
+      background-color: $layer3;
       border-radius: .5rem;
-      border: 1px solid snow;
+      // border: 1px solid snow;
       cursor: pointer;
+      &:hover {
+        background-color: $layer5;
+      }
     }
   }
 }
