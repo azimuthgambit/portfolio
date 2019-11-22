@@ -64,11 +64,11 @@ function debounce(func, wait = 10, immediate = true) {
 
 // MODAL IMAGE
 
-const modal = document.getElementById("myModal");
+const modal = document.getElementById("modal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-const img = document.getElementById("linkedin_recs");
-const modalImg = document.getElementById("img01");
+const img = document.getElementById("linkedin-recs");
+const modalImg = document.getElementById("linkedin-fullsize");
 const captionText = document.getElementById("caption");
 img.onclick = function(){
   modal.style.display = "block";

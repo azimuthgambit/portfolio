@@ -83,6 +83,9 @@ body {
   color:snow;
   background-color:#121212;
   transition: background-color 1s ease;
+
+  max-width:$body-max-width;
+
 }
 
 /* Typography
@@ -119,8 +122,9 @@ p {  margin-top: 0; }
 a { color:snow; }
 
 hr {
-  width:80vw;
-  max-width:$body-max-width*.5;
+  // width:80vw;
+  // max-width:$body-max-width*.5;
+  max-width:80%;
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
@@ -131,8 +135,9 @@ hr {
 .container {
   margin: 0 auto;
   display: grid;
-  min-width:$body-min-width;
-  max-width:$body-max-width;
+  // min-width:$body-min-width;
+  // max-width:$body-max-width;
+  max-width:100%;
 }
 
 .welcome {
@@ -166,12 +171,11 @@ hr {
 ///////////////// ABOUT SECTION /////////////////
 
 //SASS variables
-$about-img-width: 30vw;
-$about-min-width: 15rem;
+// $about-img-width: 30vw;
+// $about-min-width: 15rem;
 
 $about-std-width: 90vw;
 $about-max-width: 60rem;
-
 $about-icon-width: calc(4rem + 1vw);
 
 .about-row {
@@ -214,7 +218,7 @@ $about-icon-width: calc(4rem + 1vw);
     i { font-size: $about-icon-width; color:snow; }
   }
 
-  @media only screen and (min-width:$desktop) {
+  @media (min-width:$desktop) {
     grid: auto / auto auto;
     grid-gap: 2vw;
     #hello-text {text-align:center;}
@@ -240,9 +244,6 @@ $about-icon-width: calc(4rem + 1vw);
     grid-template-columns: 1fr 1fr;
     grid-gap: 1vw;
     justify-items: center;
-    button {
-      color: red;
-    }
     a {
       height: auto;
       width: 10rem;
@@ -256,10 +257,10 @@ $about-icon-width: calc(4rem + 1vw);
       text-transform: uppercase;
       text-decoration: none;
       white-space: nowrap;
-      // background-color: transparent;
-      background-color: $layer3;
       border-radius: .5rem;
       // border: 1px solid snow;
+      // background-color: transparent;
+      background-color: $layer3;
       cursor: pointer;
       &:hover {
         background-color: $layer5;
@@ -270,7 +271,15 @@ $about-icon-width: calc(4rem + 1vw);
 
 .emoji {
   height:24px;
-  width:auto;
+  // @media (max-width: $desktop) {
+  //   height:18px;
+  // }
+}
+.hand {
+  transform:rotate(0);
+  @media (max-width: $desktop) {
+    transform:rotate(90deg);
+  }
 }
 
 ///////////////// MODAL IMAGE /////////////////
@@ -327,22 +336,18 @@ $about-icon-width: calc(4rem + 1vw);
 
 @-webkit-keyframes zoom {
   from {
-    // -webkit-transform:scale(0.5);
     opacity:0;
   }
   to {
-    // -webkit-transform:scale(1);
     opacity:1;
   }
 }
 
 @keyframes zoom {
   from {
-    // transform:scale(0.5);
     opacity:0;
   }
   to {
-    // transform:scale(1);
     opacity:1;
   }
 }
@@ -366,12 +371,11 @@ $about-icon-width: calc(4rem + 1vw);
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media (max-width: 700px){
   .modal-content {
     width: 100%;
   }
 }
-
 
 ///////////////// CONTACT SECTION /////////////////
 .contact {
@@ -379,8 +383,6 @@ $about-icon-width: calc(4rem + 1vw);
   justify-content:center;
   // grid-template-columns: autofill minmax(250px, 800px) autofill;
   width:100%;
-  // background-size: cover;
-  // background-image:url('https://2um6b944etm332zlf4pb7a19-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/Fine-Art-Tom-Blachford-HAL9001.jpg');
   .filler {
     h5, h6 {
       display:grid;
@@ -398,7 +400,7 @@ $about-icon-width: calc(4rem + 1vw);
     justify-content: center;
     text-align:center;
     overflow-x:auto;
-    @media only screen and (min-width:$phone) {
+    @media (min-width:$phone) {
       width:70rem;
       // grid-column-gap:2rem;
     }
@@ -406,7 +408,7 @@ $about-icon-width: calc(4rem + 1vw);
       font-size: 4rem;
       color:snow;
       opacity:0.9;
-      @media only screen and (min-width:$phone) { font-size: 5rem; }
+      @media (min-width:$phone) { font-size: 5rem; }
     }
   }
 }

@@ -68,6 +68,7 @@ body {
   color: snow;
   background-color: #121212;
   transition: background-color 1s ease;
+  max-width: 1400px;
 }
 
 /* Typography
@@ -164,8 +165,7 @@ a {
 }
 
 hr {
-  width: 80vw;
-  max-width: 700px;
+  max-width: 80%;
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
@@ -175,8 +175,7 @@ hr {
 .container {
   margin: 0 auto;
   display: grid;
-  min-width: 300px;
-  max-width: 1400px;
+  max-width: 100%;
 }
 
 .welcome {
@@ -258,7 +257,7 @@ hr {
   font-size: calc(4rem + 1vw);
   color: snow;
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .about-row {
     grid: auto/auto auto;
     grid-gap: 2vw;
@@ -306,9 +305,6 @@ hr {
   grid-gap: 1vw;
   justify-items: center;
 }
-.portfolio .demo-repo-click button {
-  color: red;
-}
 .portfolio .demo-repo-click a {
   height: auto;
   width: 10rem;
@@ -322,8 +318,8 @@ hr {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: rgba(255, 255, 255, 0.12);
   border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.12);
   cursor: pointer;
 }
 .portfolio .demo-repo-click a:hover {
@@ -332,7 +328,15 @@ hr {
 
 .emoji {
   height: 24px;
-  width: auto;
+}
+
+.hand {
+  transform: rotate(0);
+}
+@media (max-width: 1024px) {
+  .hand {
+    transform: rotate(90deg);
+  }
 }
 
 #linkedin_recs {
@@ -431,7 +435,7 @@ hr {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .modal-content {
     width: 100%;
   }
@@ -456,7 +460,7 @@ hr {
   text-align: center;
   overflow-x: auto;
 }
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
   .contact .contact-icons {
     width: 70rem;
   }
@@ -466,7 +470,7 @@ hr {
   color: snow;
   opacity: 0.9;
 }
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
   .contact .contact-icons a {
     font-size: 5rem;
   }
